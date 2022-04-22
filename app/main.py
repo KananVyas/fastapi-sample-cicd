@@ -17,7 +17,7 @@ def read_item(item_id: int, q: Optional[str] = None):
     elif item_id == 2:
         q = "hello_dhruvi"
     elif item_id == 3:
-        q = "hello_ruhani"
+        q = "hello_ruhanii"
     else:
         q = "hello_unknown"
     return {"item_id": item_id, "q": q}
