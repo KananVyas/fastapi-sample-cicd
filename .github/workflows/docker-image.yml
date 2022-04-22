@@ -17,20 +17,20 @@ jobs:
     - run: |
         git fetch --prune --unshallow
     - name: Set up Python 3.8
-      uses: actions/checkout@v3
+      uses: ./
       with:
         python-version: 3.8
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - uses: actions/checkout@v3
+    - uses: ./
     - name: fastapi_sample
       run: docker build . --file Dockerfile --tag fastapi_sample:test
-    - uses: actions/checkout@v3
+    - uses: ./
     - name: Run docker fastapi_sample
       run: docker run -it --rm -p 1234:1234  -d fastapi_sample
-    - uses: actions/checkout@v3
+    - uses: ./
     - name: Pytest
       run: pytest test_app.py
     
